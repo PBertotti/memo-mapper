@@ -6,29 +6,44 @@
 // ----------------------------
 
 // ----------------------------
-import { Typography, makeStyles, Input } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { useState } from "react";
 // ----------------------------
 
 // ----------------------------
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  balloon: {
+    position: "absolute",
+    left: 500,
+    top: 100,
+    textAlign: "center",
+    wordBreak: "break-word",
+    padding: "35px 35px 10px 35px",
+    fontSize: "22px",
+    borderRadius: 14,
+    borderColor: "rgba(0, 0, 0, 0.18)",
+    outline: "none",
+
+    overflow: "hidden",
+  },
+}));
 // ----------------------------
 
 // ----------------------------
 export const Balloon = (props) => {
   const classes = useStyles();
-  const [balloonValue, setBalloonValue] = useState("");
+  const [balloonValue, setBalloonValue] = useState("Balloon!");
 
   return (
-    <div>
-      <Input
-        onChange={(event) => {
-          console.log(event.target.value);
-        }}
-      >
-        Balloon!
-      </Input>
-    </div>
+    <textarea
+      onChange={(event) => {
+        setBalloonValue(event.target.value);
+      }}
+      disableUnderline={true}
+      //fullWidth={true}
+      className={classes.balloon}
+      value={balloonValue}
+    ></textarea>
   );
 };
 // ----------------------------
