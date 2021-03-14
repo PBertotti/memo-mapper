@@ -13,6 +13,7 @@ import { useState } from "react";
 // ----------------------------
 const useStyles = makeStyles((theme) => ({
   balloon: {
+    fontWeight: 500,
     position: "absolute",
     left: 500,
     top: 100,
@@ -23,8 +24,11 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 14,
     borderColor: "rgba(0, 0, 0, 0.18)",
     outline: "none",
-
+    fontFamily: "Roboto, sans-serif",
     overflow: "hidden",
+    "::hover": {
+      fontWeight: 700,
+    },
   },
 }));
 // ----------------------------
@@ -32,18 +36,15 @@ const useStyles = makeStyles((theme) => ({
 // ----------------------------
 export const Balloon = (props) => {
   const classes = useStyles();
-  const [balloonValue, setBalloonValue] = useState("Balloon!");
 
   return (
     <textarea
       onChange={(event) => {
-        setBalloonValue(event.target.value);
+        props.updateBalloonValue(event.target.value);
       }}
-      disableUnderline={true}
-      //fullWidth={true}
       className={classes.balloon}
-      value={balloonValue}
-    ></textarea>
+      value={props.value}
+    />
   );
 };
 // ----------------------------

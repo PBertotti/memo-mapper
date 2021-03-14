@@ -9,6 +9,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Menu />
         <Balloon />
+        <Balloon />
       </ThemeProvider>
     </div>
   );
