@@ -58,6 +58,7 @@ export const Menu = (props) => {
           <Add className={classes.addIcon} />
         </Fab>
       </Drawer>
+      {props.children}
     </div>
   );
 };

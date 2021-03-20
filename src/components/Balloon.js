@@ -6,29 +6,25 @@
 // ----------------------------
 
 // ----------------------------
-import { makeStyles } from "@material-ui/core";
-import { useState } from "react";
+import { makeStyles, Paper } from "@material-ui/core";
 // ----------------------------
 
 // ----------------------------
 const useStyles = makeStyles((theme) => ({
-  balloon: {
+  text: {
     fontWeight: 500,
-    position: "absolute",
-    left: 500,
-    top: 100,
     textAlign: "center",
     wordBreak: "break-word",
-    padding: "35px 35px 10px 35px",
+    width: "100%",
+    paddingTop: "20px",
     fontSize: "22px",
-    borderRadius: 14,
-    borderColor: "rgba(0, 0, 0, 0.18)",
-    outline: "none",
+    position: "relative",
     fontFamily: "Roboto, sans-serif",
-    overflow: "hidden",
-    "::hover": {
-      fontWeight: 700,
-    },
+    border: "1px solid #D1D1D1",
+    borderRadius: "7px",
+    outline: "none",
+    background: "none",
+    resize: "none",
   },
 }));
 // ----------------------------
@@ -37,14 +33,6 @@ const useStyles = makeStyles((theme) => ({
 export const Balloon = (props) => {
   const classes = useStyles();
 
-  return (
-    <textarea
-      onChange={(event) => {
-        props.updateBalloonValue(event.target.value);
-      }}
-      className={classes.balloon}
-      value={props.value}
-    />
-  );
+  return <textarea className={classes.text}>{props.value}</textarea>;
 };
 // ----------------------------

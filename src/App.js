@@ -1,15 +1,15 @@
-import { Menu } from "./components/Menu";
+import { Menu } from "./components/";
 import { theme } from "./theme";
 import { ThemeProvider } from "@material-ui/core";
-import { Balloon } from "./components/Balloon";
+import { MapCanvas } from "./screens/MapCanvas";
 
 function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Menu />
-        <Balloon />
-        <Balloon />
+        <Menu>
+          <MapCanvas />
+        </Menu>
       </ThemeProvider>
     </div>
   );
