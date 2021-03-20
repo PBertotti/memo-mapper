@@ -33,6 +33,11 @@ const useStyles = makeStyles((theme) => ({
 export const Balloon = (props) => {
   const classes = useStyles();
 
-  return <textarea className={classes.text}>{props.value}</textarea>;
+  switch (props.shape) {
+    case "square":
+      return <textarea className={classes.text}>{props.content}</textarea>;
+    default:
+      return null;
+  }
 };
 // ----------------------------

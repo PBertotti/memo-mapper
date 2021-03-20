@@ -8,6 +8,7 @@
 // ----------------------------
 import { Container, Grid, makeStyles } from "@material-ui/core";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Balloon } from "../components";
 // ----------------------------
 
@@ -24,50 +25,14 @@ const useStyles = makeStyles((theme) => ({
 // ----------------------------
 export const MapCanvas = (props) => {
   const classes = useStyles();
-  const [balloons, setBalloons] = useState([
-    {
-      value: "Ballon!",
-      uuid: "123",
-      coordinates: { x: 0, y: 0 },
-    },
-    {
-      value: "Ballon!",
-      uuid: "123",
-      coordinates: { x: 0, y: 0 },
-    },
-    {
-      value: "Ballon!",
-      uuid: "123",
-      coordinates: { x: 0, y: 0 },
-    },
-    {
-      value: "Ballon!",
-      uuid: "123",
-      coordinates: { x: 0, y: 0 },
-    },
-    {
-      value: "Ballon!",
-      uuid: "123",
-      coordinates: { x: 0, y: 0 },
-    },
-    {
-      value: "Ballon!",
-      uuid: "123",
-      coordinates: { x: 0, y: 0 },
-    },
-    {
-      value: "Ballon!",
-      uuid: "123",
-      coordinates: { x: 0, y: 0 },
-    },
-  ]);
+  const balloons = useSelector((state) => state.balloons);
 
   return (
     <div className={classes.canvas}>
       <Grid container spacing={3}>
-        {balloons.map((balloon) => (
+        {balloons.balloonList.map((balloon) => (
           <Grid item xs={2}>
-            <Balloon value={balloon.value} />
+            <Balloon content={balloon.content} shape={balloon.shape} />
           </Grid>
         ))}
       </Grid>

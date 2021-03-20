@@ -1,7 +1,6 @@
-import { Menu } from "./components/";
 import { theme } from "./theme";
 import { ThemeProvider } from "@material-ui/core";
-import { MapCanvas } from "./screens/MapCanvas";
+import { MapCanvas, Menu } from "./screens";
 
 function App() {
   return (
