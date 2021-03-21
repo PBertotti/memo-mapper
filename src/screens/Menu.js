@@ -65,8 +65,8 @@ export const Menu = (props) => {
 
   // ----------------------------
   // Add Shape to the canvas function;
-  const addShape = (shape) => {
-    dispatch(addBallonToCanvas(shape));
+  const addShape = (shape, content) => {
+    dispatch(addBallonToCanvas(shape, content));
   };
 
   return (
@@ -89,15 +89,26 @@ export const Menu = (props) => {
         <IconButton
           className={classes.shapeBtn}
           onClick={() => {
-            addShape("square");
+            addShape("rectangle", "Ballon");
           }}
         >
           <BalloonIcon />
         </IconButton>
-        <IconButton className={classes.shapeBtn}>
+        <IconButton
+          className={classes.shapeBtn}
+          onClick={() => {
+            addShape("decision", "Decision");
+          }}
+        >
           <DecisionIcon />
         </IconButton>
-        <IconButton className={classes.shapeBtn}>
+        <IconButton
+          className={classes.shapeBtn}
+          className={classes.shapeBtn}
+          onClick={() => {
+            addShape("sphere", "Sphere");
+          }}
+        >
           <SphereIcon />
         </IconButton>
         <IconButton className={classes.shapeBtn}>

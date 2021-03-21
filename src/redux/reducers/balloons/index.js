@@ -28,8 +28,8 @@ export const reducer = (state = initialState, action) => {
 
       const filledBallon = {
         ...emptyBallon,
-        content: "Ballon",
-        shape: action.payload,
+        content: action.payload.content,
+        shape: action.payload.shape,
       };
 
       let newBallonList = [...state.balloonList];

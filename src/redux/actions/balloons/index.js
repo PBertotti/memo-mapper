@@ -13,7 +13,7 @@ import { ADD_BALLOON } from "./types";
 // ----------------------------
 
 // Add balloons to canvas action;
-export const addBallonToCanvas = (shape) => (dispatch) => {
-  dispatch({ type: ADD_BALLOON, payload: shape });
+export const addBallonToCanvas = (shape, content) => (dispatch) => {
+  dispatch({ type: ADD_BALLOON, payload: { shape: shape, content: content } });
 };
 // ----------------------------

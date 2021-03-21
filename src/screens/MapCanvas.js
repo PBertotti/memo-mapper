@@ -28,7 +28,13 @@ export const MapCanvas = (props) => {
 
   return (
     <div className={classes.canvas}>
-      <Grid container spacing={3}>
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
         {balloons.balloonList.map((balloon) => (
           <Grid item xs={2}>
             <Balloon content={balloon.content} shape={balloon.shape} />
