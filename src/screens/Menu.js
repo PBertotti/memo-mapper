@@ -111,7 +111,12 @@ export const Menu = (props) => {
         >
           <SphereIcon />
         </IconButton>
-        <IconButton className={classes.shapeBtn}>
+        <IconButton
+          className={classes.shapeBtn}
+          onClick={() => {
+            addShape("database", "Database");
+          }}
+        >
           <DatabaseIcon />
         </IconButton>
       </Drawer>

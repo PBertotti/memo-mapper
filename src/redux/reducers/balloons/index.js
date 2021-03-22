@@ -10,7 +10,7 @@
 import { ADD_BALLOON } from "../../actions/balloons/types";
 
 // Import balloons preset config;
-import ballonPreset from "../../../utils/balloonPreset.json";
+import ballonPreset from "../../../utils/config/balloonPreset.json";
 // ----------------------------
 
 // ----------------------------
